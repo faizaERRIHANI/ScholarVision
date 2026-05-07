@@ -1,0 +1,132 @@
+# ════════════════════════════════════════════════════════════
+# PYTHON
+# ════════════════════════════════════════════════════════════
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+*.cover
+*.log
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.ruff_cache/
+
+# Environnements virtuels
+venv/
+.venv/
+env/
+ENV/
+
+# ════════════════════════════════════════════════════════════
+# NODE.JS
+# ════════════════════════════════════════════════════════════
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp.*
+.yarn/
+
+# Builds frontend
+frontend/dist/
+frontend/build/
+.next/
+out/
+
+# ════════════════════════════════════════════════════════════
+# IDE & ÉDITEURS
+# ════════════════════════════════════════════════════════════
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ════════════════════════════════════════════════════════════
+# OS
+# ════════════════════════════════════════════════════════════
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ════════════════════════════════════════════════════════════
+# SECRETS & ENV
+# ════════════════════════════════════════════════════════════
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+
+# ════════════════════════════════════════════════════════════
+# DOCKER
+# ════════════════════════════════════════════════════════════
+docker-compose.override.yml
+
+# ════════════════════════════════════════════════════════════
+# UPLOADS & DATA (gardés vides via .gitkeep)
+# ════════════════════════════════════════════════════════════
+uploads/photos/*
+uploads/bulletins/*
+uploads/faces/*
+uploads/documents/*
+!uploads/**/.gitkeep
+
+# Modèles ML (lourds, téléchargés au build)
+*.h5
+*.pt
+*.pth
+*.onnx
+*.weights
+ml_service/models/*.pt
+ml_service/models/*.pth
+ml_service/models/*.onnx
+ml_service/data/*.csv
+ml_service/data/*.json
+
+# ════════════════════════════════════════════════════════════
+# BASE DE DONNÉES
+# ════════════════════════════════════════════════════════════
+*.sql.bak
+*.sqlite3
+*.db
+backups/
+
+# ════════════════════════════════════════════════════════════
+# LOGS & MISC
+# ════════════════════════════════════════════════════════════
+logs/
+*.log
+*.bak
+*.tmp
+*.temp
+.sass-cache/
