@@ -125,7 +125,7 @@ services:
       - ./uploads:/app/uploads
       - ml_models:/app/ml_models
     devices:
-      - "/dev/video0:/dev/video0"   # Webcam (si VMware partage la caméra)
+      # - "/dev/video0:/dev/video0"   # Webcam (si VMware partage la caméra)
     depends_on:
       postgres:
         condition: service_healthy
