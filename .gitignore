@@ -130,3 +130,24 @@ logs/
 *.tmp
 *.temp
 .sass-cache/
+
+# ════════════════════════════════════════════════════════════
+# MODÈLES ML — Téléchargés automatiquement, NE PAS committer
+# ════════════════════════════════════════════════════════════
+# InsightFace ArcFace (buffalo_l ~275 MB)
+ml_service/data/
+ml_service/data/**
+ml_service/data/insightface/
+ml_service/data/insightface/**
+
+# Modèles YOLO (.pt, .pth, .onnx)
+**/*.pt
+**/*.pth
+**/*.onnx
+**/*.weights
+**/*.h5
+**/*.pb
+
+# Archives lourdes
+**/buffalo_*.zip
+**/yolov8*.pt
