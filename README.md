@@ -21,6 +21,8 @@
 ---
 
 ## 📁 Architecture du Monoreposchool-platform/
+
+```
 ├── frontend/                  # Application React + Vite
 │   ├── public/                # Assets statiques
 │   └── src/
@@ -66,6 +68,7 @@
 ├── .env.example               # Template public
 └── README.md                  # Ce fichier---
 
+```
 ## 🚀 Démarrage rapide
 
 ### Mode développement (sans Docker)
