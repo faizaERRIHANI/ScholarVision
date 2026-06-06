@@ -30,3 +30,4 @@ __all__ = [
     "Fee", "FeeType", "FeeStatus", "PaymentMethod",
     "Notification", "NotificationType", "NotificationPriority",
 ]
+from app.models.audit_log import AuditLog

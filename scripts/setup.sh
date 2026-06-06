@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ════════════════════════════════════════════════════════════
-# EduPilot — Setup automatique de l'environnement
+# ScholarVision — Setup automatique de l'environnement
 # Usage : chmod +x scripts/setup.sh && ./scripts/setup.sh
 # ════════════════════════════════════════════════════════════
 
@@ -28,7 +28,7 @@ cd "$PROJECT_ROOT"
 
 echo ""
 echo "╔══════════════════════════════════════════════╗"
-echo "║   🎓  EduPilot — Setup automatique           ║"
+echo "║   🎓  ScholarVision — Setup automatique           ║"
 echo "║       ERRIHANI Faiza · ENSET 2025/2026       ║"
 echo "╚══════════════════════════════════════════════╝"
 info "Répertoire : $PROJECT_ROOT"

@@ -1,4 +1,4 @@
-# 🎓 EduPilot — Plateforme de Gestion Scolaire avec IA
+# 🎓 ScholarVision — Plateforme de Gestion Scolaire avec IA
 
 > Système web complet de gestion scolaire avec **reconnaissance faciale YOLO + ArcFace**, tableau de bord analytique, gestion des présences en temps réel, bulletins PDF automatiques.
 

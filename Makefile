@@ -1,42 +1,45 @@
-# ════════════════════════════════════════════════════════════
-# EduPilot — Raccourcis Make
-# Usage : make <commande>
-# ════════════════════════════════════════════════════════════
+.PHONY: build up down ps logs migrate seed backup deploy test clean
 
-.PHONY: help setup dev backend frontend ml docker-up docker-down logs clean test
+COMPOSE := docker compose
 
-help: ## Affiche cette aide
-	@echo "Commandes disponibles :"
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}'
+build:
+	$(COMPOSE) build
 
-setup: ## Installation complète de l'environnement
-	@chmod +x scripts/setup.sh
-	@./scripts/setup.sh
+up:
+	$(COMPOSE) up -d && echo "→ http://localhost"
 
-backend: ## Lance le backend FastAPI
-	@cd backend && source venv/bin/activate && uvicorn app.main:app --reload --port 8000
+down:
+	$(COMPOSE) down
 
-frontend: ## Lance le frontend React + Vite
-	@cd frontend && npm run dev
+ps:
+	$(COMPOSE) ps
 
-ml: ## Lance le service ML Flask
-	@cd ml_service && source venv/bin/activate && python app.py
+logs:
+	$(COMPOSE) logs -f
 
-docker-up: ## Lance tous les services en Docker
-	@docker compose up -d --build
+logs-backend:
+	$(COMPOSE) logs -f backend
 
-docker-down: ## Arrête tous les conteneurs
-	@docker compose down
+logs-ml:
+	$(COMPOSE) logs -f ml_service
 
-logs: ## Affiche les logs Docker en temps réel
-	@docker compose logs -f
+migrate:
+	$(COMPOSE) exec backend alembic upgrade head
 
-clean: ## Nettoie les builds et caches
-	@find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
-	@find . -type d -name .pytest_cache -exec rm -rf {} + 2>/dev/null || true
-	@find . -type d -name node_modules -exec rm -rf {} + 2>/dev/null || true
-	@find . -type d -name dist -exec rm -rf {} + 2>/dev/null || true
-	@echo "✅ Nettoyage terminé"
+seed:
+	$(COMPOSE) exec backend python scripts/seed_data.py
 
-test: ## Lance les tests pytest
-	@cd backend && source venv/bin/activate && pytest tests/ -v
+psql:
+	$(COMPOSE) exec postgres psql -U scolaire -d gestion_scolaire
+
+backup:
+	./infra/scripts/backup.sh
+
+deploy:
+	./infra/scripts/deploy.sh
+
+test:
+	$(COMPOSE) exec backend pytest tests/ -v
+
+clean:
+	$(COMPOSE) down -v --rmi local

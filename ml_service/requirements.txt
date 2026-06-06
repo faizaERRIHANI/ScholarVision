@@ -1,0 +1,14 @@
+flask==3.1.1
+flask-cors==5.0.1
+# ultralytics sans torch automatique
+ultralytics==8.3.147 --no-deps
+opencv-python-headless==4.11.0.86
+numpy==2.2.6
+insightface==0.7.3
+onnxruntime==1.26.0
+Pillow==10.4.0
+psycopg2-binary==2.9.10
+pgvector==0.3.6
+python-dotenv==1.1.0
+requests==2.32.3
+gunicorn==23.0.0
